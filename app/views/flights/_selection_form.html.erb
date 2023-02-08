@@ -1,0 +1,60 @@
+<div class="selection_con">
+  <% if @departure_airport.blank? && @arrival_airport.blank? && @departure_date.blank?%>
+    <div class="error">
+      <h4>Please fill the form</h4>
+    </div>
+  <% elsif @departure_airport.blank? %>
+    <div class="error">
+      <h4>departure cant be blank</h4>
+    </div>
+  <% elsif @arrival_airport.blank? %>
+      <div class="error">
+      <h4>arrival cant be blank</h4>
+    </div>
+  <% elsif @departure_date.blank? %>
+      <div class="error">
+      <h4>date cant be blank</h4>
+    </div>
+  <% elsif @departure_airport == @arrival_airport %>
+    <div class="error">
+      <h4>departure and arrive at cant be the same</h4>
+    </div>
+  <% else %>
+      <% if @searched_flights.present? %>
+        <div class="result__container">
+            <%= form_with(model: @flight, url: new_booking_path, method: "get") do |form| %>
+              <%= form.hidden_field :num_of_passengers, value: @num_of_passengers %>
+                  
+                  <div class="result_center">
+                    <h4 class="result_center"><%= "Available Flight List" %></h4>
+                  </div>
+
+                  <div class="result_center">
+                    <h4><%="#{pluralize(@searched_flights.count, "flight")}results available in #{@searched_flights.first.departure_date_formatted}"%></h4>
+                  </div>
+
+                    <% @searched_flights.each do |flight| %>
+
+                            <div class="list__container">
+
+                              <%= form.radio_button :flight_id, flight.id, { class: "form-check-input border-secondary" } %>
+
+                              <%= "#{flight.departure_airport.city}
+                                  (#{flight.departure_airport.code}) to
+                                  #{flight.arrival_airport.city}
+                                  (#{flight.arrival_airport.code})" %>
+                                <%= "Departure: #{flight.departure_time_formatted}" %>
+                                <%= "Duration: #{flight.duration.to_i} hours" %>
+                            </div>
+
+                  <% end %>
+                      <%= form.submit "Book", class: "button" %>     
+                  </div>
+            </div>
+      <% end %>
+    <% end %>
+  <% end %>
+
+</div>
+
+

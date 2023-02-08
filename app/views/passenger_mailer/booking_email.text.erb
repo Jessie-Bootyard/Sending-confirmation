@@ -1,0 +1,8 @@
+<div class="center">
+<p>Succesfully booked!</p>
+<%= "#{@booking.flight.departure_airport.code} to #{@booking.flight.arrival_airport.code}" %>
+<%= "Flight Date: #{@booking.flight.departure_date_formatted}"%>
+<%= "Departure Time: #{@booking.flight.departure_time_formatted}"%>
+<%= "Duration: #{@booking.flight.duration.to_i} hours"%>
+<%= "Thank you for Booking with us!"%>
+</div>

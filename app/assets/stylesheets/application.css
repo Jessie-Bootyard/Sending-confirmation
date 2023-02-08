@@ -1,0 +1,335 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS (and SCSS, if configured) file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+:root{
+    --textcolor: #198754 !important;
+    --bodycolor: #161b22 !important;
+    --border: .01rem solid #6e7681 !important;
+    --navcolor: #1d2126 !important;
+    --boxcolor: #0d1117 !important;
+    --warning: #842029 !important;
+}
+
+/* example
+h1 {
+    color: var(--red);
+  }
+  #MyText {
+    color: var(--blue);
+    width: var(--fullwidth);
+  } */
+
+
+*{
+    font-family: roboto;
+    color: var(--textcolor);
+    padding: 0;
+    margin: 0;
+}
+* select{
+    font-family: roboto;
+    color:  black;
+}
+body{
+    width: 100%;
+    height: fit-content;
+    background-color: var(--bodycolor);
+}
+.nav-con{
+    width: 100%;
+    min-height: 50px;
+    background-color: var(--navcolor);
+    display: flex;
+    vertical-align: middle;
+}
+.l_side ,.r_side{
+    width: 50%;
+    height: fit-content;
+    font-size:  1.5em;
+    margin-top: .8em;
+}
+.l_side a{
+    color: var(--textcolor) !important;
+    margin-left: .5em;
+}
+.r_side{
+    text-align:  right;
+    margin-right: .3em;
+}
+.r_side a{
+    color: var(--textcolor) !important;
+    text-decoration: none ;
+}
+
+.con{
+    margin-top: 1rem;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+}
+.wrap{
+
+    width: 50%;
+    height: fit-content;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+.can{
+    padding: 2rem;
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    justify-content: center;
+    background-color: #1d2126;
+    border-radius: 6px;
+    flex-direction: column;
+    margin-bottom: 10px;
+}
+.can form{
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.can form .selction___con{
+    margin: 5px;
+    min-width: 90%;
+    height: fit-content;
+    text-align: center;
+    padding: 5px;
+}
+
+.can form .selction___con h4{
+    color: var(--textcolor);
+    padding: 5px;
+    font-size: 1.1rem;
+}
+.can form .selction___con select{
+    color: var(--textcolor);
+    padding: 8px;
+    font-size: 1.1rem;
+    width: 60%;
+    height: fit-content;
+    background-color: #0d1117;
+    border: none;
+    border-radius: 6px;
+    text-align: center;
+    border: .01rem solid transparent;
+}
+.can form .selction___con select:hover, .can form .selction_con select:focus{
+    border: none;
+    outline: none !important;
+    border: var(--border);
+}
+.can form .selction___con input{
+    min-width: 120px;
+    height: 30px;
+    padding: 5px;
+    border-radius: 6px;
+    background-color: var(--boxcolor);
+    outline: none !important;
+    border: var(--border);
+    font-size: 1.1rem;
+}
+.can form input:hover{
+    transition: .5s ease-in-out;
+    background-color: var(--textcolor);
+    border-color: var(--textcolor);
+    color: white;
+}   
+.selection_con{
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    justify-content: center;
+}
+.result__container{
+    width: 100%;
+    height: fit-content;
+    padding: 5px;
+}            
+.list__container{
+    display: flex;
+    width: 100%;
+    height: fit-content;
+    padding: 10px;
+    margin: 5px;
+    border-radius: 6px;
+    background-color: #0d1117;
+}
+.result_center{
+    width: 100%;
+    height: fit-content;
+    text-align: center;
+    padding-bottom: 5px;
+}
+.list__container{
+    width: 60%;
+    display: flex;
+    flex-direction: row-reverse;
+}
+.list__container input {
+    min-width: 20px !important;
+    height: 20px;
+    padding: 5px;
+    border-radius: 6px;
+    background-color: var(--boxcolor) !important;
+    outline: none !important;
+    border: var(--border);
+    font-size: 1.1rem;
+}
+
+.fill_out{
+    margin-top: 10px;
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    justify-content: center;
+}
+.fill_out > form{
+    width: 60%;
+    height: fit-content;
+}
+.fill_out > form > .booking__container{
+    width: 100%;
+    height: fit-content;
+    padding: 10px;
+    background-color: var(--navcolor);
+    border-radius: 6px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.success__booking{
+    width: 60%;
+    height: fit-content;
+    border-radius: 6px;
+    padding: 8px;
+    margin-bottom: 10px;
+    text-align: center;
+    background-color: var(--boxcolor);
+}
+.success__booking > h4{
+    padding: 5px;
+    border-bottom: var(--border);
+    font-size: 1.1rem;
+}
+.success__booking > p{
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-top: 2px;
+    font-size: 1rem;
+}
+
+.passenger__wrapper{
+    width: 60%;
+    height: fit-content;
+    padding: 10px;
+    border-radius: 6px;
+    background-color: var(--boxcolor);
+}
+.passenger__container{
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+}
+.passenger__container h4{
+    width: 80%;
+    padding-bottom: 5px;
+}
+.passenger__container > .fields > label{
+    font-size: 1rem;
+    width: 100%;
+}
+.passenger__container > .fields > input{
+    width: 100%;
+    padding-bottom: 5px;
+    height: 25px;
+    border: none;
+    outline: none !important;
+    font-size: 1rem;
+    text-align: center;
+    border-radius: 6px;
+    margin-top: 5px;
+    background-color: #0d1117;
+    border-bottom: 1.5px solid #198754;
+    margin-bottom: 10px;
+}
+input[type="submit" i]{
+    background-color: #0d1117 !important;
+    width: 60%;
+    height: 30px;
+    margin-top: 10px;
+    color: #198754 !important;
+    border: var(--border) !important;
+    border-radius: 6px;
+    outline: none !important;
+    padding: 5px;
+    font-size: 1.1rem;
+}
+input[type="submit" i]:hover{
+    transition: .5s ease-in-out;
+    background-color: #198754 !important;
+    color: white !important;
+    border-color:#198754  !important;
+}
+.show_container{
+    width: 100%;
+    height: fit-content;
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.show_container .success{
+    padding: 10px;
+    background-color: #198754 !important;
+    color: white;
+    margin: 10px;
+    width: 70%;
+    text-align: center;
+    border-radius: 6px;
+}
+.showcontainer{
+    width: 50%;
+    height: fit-content;
+    background-color: #0d1117;
+    padding: 8px;
+    border-radius: 6px;
+
+}
+.success_booking{
+    width: 100%;
+    text-align: center;
+}
+.passenger_wrapper{
+    text-align: center;
+    margin: 10px;
+}
+.passenger_wrapper h4{
+    color: #198754;
+    border-bottom: 1px solid #198754;
+    padding: 5px;
+}
+.passenger_wrapper p{
+    color: #198754;
+    border-bottom: 1px solid #198754;
+    padding: 5px;
+}
